@@ -83,7 +83,7 @@ $.ajax('https://randomuser.me/api/',{
 		console.log(error)
 	}
 });
-*/
+
 
 //Vanilla JS | XMLHttpRequest
 
@@ -98,6 +98,35 @@ fetch('https://randomuser.me/api/')
 .catch(function(){
 	console.log('algo fallo')
 })
+*/
+//--------------CLASE-07---------------//
+
+////Version 1
+//(async function load(){
+//	//Esto sirve para esperar la peticion a la API.
+//	
+//	const response = await fetch('https://yts.lt/api/v2/list_movies.json?genre=action')
+//	const data = await response.json()
+//	console.log(data)
+//})()
+
+//Version 2
+(async function load(){
+	//Esto sirve para esperar la peticion a la API.
+	async function getData(url){
+		const response = await fetch(url)
+		const data = await response.json()
+		return data;
+	}
+	
+	const actionList = await getData('https://yts.lt/api/v2/list_movies.json?genre=action')
+	const animationList = await getData('https://yts.lt/api/v2/list_movies.json?genre=animation')
+	console.log(actionList)
+	console.log(animationList)
+})()
+	
+//Se puede usar load() para carga la funcion, pero se 'envuelve'
+//en (async fun.... ()) para que se ejecute inmediatamente.
 
 
 
@@ -112,7 +141,19 @@ fetch('https://randomuser.me/api/')
 
 
 
-//--------------CLASE-0---------------//
+
+
+
+
+
+
+
+
+
+
+
+
+
 //--------------CLASE-0---------------//
 //--------------CLASE-0---------------//
 //--------------CLASE-0---------------//
