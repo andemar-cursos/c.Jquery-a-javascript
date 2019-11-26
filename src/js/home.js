@@ -128,7 +128,7 @@ fetch('https://randomuser.me/api/')
 //Se puede usar load() para carga la funcion, pero se 'envuelve'
 //en (async fun.... ()) para que se ejecute inmediatamente.
 */
-//--------------CLASE-08---------------//
+//--------------CLASE-08-09-10---------------//
 (async function load(){
 
 //Funcion que hace la conexion con la API.
@@ -159,19 +159,25 @@ function videoItemTemplate(movie){
 	)
 }
 
-//console.log(videoItemTemplate('src/bitcoin.jpg', 'bitcoin'))	
-	
 
+const $actionContainer 		= document.querySelector('#action');
 
 actionList.data.movies.forEach( movie => {
 	const HTMLString = videoItemTemplate(movie)
+	//Esta funcion convierte un string a un DOM de HTML
+	const html = document.implementation.createHTMLDocument()
+	//Esta linea añade, dentro del body, el string.
+	html.body.innerHTML = HTMLString;
+	//Esta linea, coge el body del html creado, y saca su primer hijo,
+	//que en este caso son los tamplates de peliculas.
+	$actionContainer.append(html.body.children[0])
 	console.log(HTMLString);
 })
 	
 	
 	
 //--------DOM---------//
-const $actionContainer 		= document.querySelector('#action');
+
 const $dramaContainer 		= document.getElementById('#drama');
 const $animationContainer 	= document.getElementById('#animation');
 
@@ -190,15 +196,7 @@ const $modalTitle 		= $modal.querySelector('h1')
 const $modalImg 		= $modal.querySelector('img')
 const $modalDescription = $modal.querySelector('p')
 
-//--------------CLASE-09---------------//
-
-
-
-
-
-
 })()
-
 
 
 
