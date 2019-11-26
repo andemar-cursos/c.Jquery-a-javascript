@@ -100,7 +100,7 @@ fetch('https://randomuser.me/api/')
 })
 */
 //--------------CLASE-07---------------//
-
+/*
 ////Version 1
 //(async function load(){
 //	//Esto sirve para esperar la peticion a la API.
@@ -127,6 +127,27 @@ fetch('https://randomuser.me/api/')
 	
 //Se puede usar load() para carga la funcion, pero se 'envuelve'
 //en (async fun.... ()) para que se ejecute inmediatamente.
+*/
+//--------------CLASE-08---------------//
+
+const $actionContainer 		= document.querySelector('#action');
+const $dramaContainer 		= document.getElementById('#drama');
+const $animationContainer 	= document.getElementById('#animation');
+
+const $featuringConteiner 	= document.getElementById('#featuring');
+const $form 	= document.getElementById('#form');
+const $home 	= document.getElementById('#home');
+
+
+const $modal = document.getElementById('modal')
+const $overlay = document.getElementById('overlay')
+const $hideModal = document.getElementById('hide-modal')
+
+
+//Este codigo busca una etiqueta 'img' dentro del elemento guardado en $modal.
+const $modalTitle 		= $modal.querySelector('h1')
+const $modalImg 		= $modal.querySelector('img')
+const $modalDescription = $modal.querySelector('p')
 
 
 
@@ -150,11 +171,6 @@ fetch('https://randomuser.me/api/')
 
 
 
-
-
-
-
-//--------------CLASE-0---------------//
 //--------------CLASE-0---------------//
 //--------------CLASE-0---------------//
 //--------------CLASE-0---------------//
