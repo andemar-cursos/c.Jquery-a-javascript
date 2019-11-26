@@ -1,3 +1,5 @@
+//--------------CLASE-01-05---------------//
+/*
 console.log('hola mundo!');
 const noCambia = "Leonidas";
 
@@ -38,11 +40,11 @@ function todoMal(message){
 	console.log(message)
 }
 
-/*//Lamado de la promesa, con las funciones como param.
+//Lamado de la promesa, con las funciones como param.
 getUser
 .then(todoBien)
 //No se agregan parametros, solo se indica la funciona a llamarse.
-.catch(todoMal)*/
+.catch(todoMal)
 
 //Varias problemesas, que si salen bien, solo obtendran 1 respuesta.
 Promise.all([
@@ -57,7 +59,7 @@ Promise.all([
 //Si almenos uno sale mal, se ejecuta 1 vez el catch
 //Si todo sale bien, se obtiene un array con las respectivas respuestas.
 
-/*
+
 //Con prommise.race, se ejecuta solo la primera promesa
 proimise.race([
 	getUser,
@@ -65,4 +67,75 @@ proimise.race([
 ])
 .then(todoBien)
 .catch(todoMal)
+
+
 */
+//--------------CLASE-06---------------//
+
+/*
+//Ajax de JQuery
+$.ajax('https://randomuser.me/api/',{
+	method: 'GET',
+	success: function(data){
+		console.log(data)
+	},
+	error: function(error){
+		console.log(error)
+	}
+});
+*/
+
+//Vanilla JS | XMLHttpRequest
+
+fetch('https://randomuser.me/api/')
+.then(function(response){
+	//console.log(response)
+	return response.json()
+})
+.then(function(user){
+	console.log('user', user.results[0].name.first)
+})
+.catch(function(){
+	console.log('algo fallo')
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//--------------CLASE-0---------------//
+//--------------CLASE-0---------------//
+//--------------CLASE-0---------------//
+//--------------CLASE-0---------------//
+//--------------CLASE-0---------------//
+//--------------CLASE-0---------------//
+//--------------CLASE-0---------------//
+//--------------CLASE-0---------------//
+//--------------CLASE-0---------------//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
